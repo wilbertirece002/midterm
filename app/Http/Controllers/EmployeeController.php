@@ -92,9 +92,8 @@ class EmployeeController extends Controller
         return redirect('/Employees');
     }
     public function searchbybirthday($mm, $dd, $yyyy) {
-        $employees = Employee::where('Birthday', '%m-%d-%Y', 'LIKE', '/' .$mm. '/' .$dd. '/' .$yyyy. '%')
-        ->orderBy("created_at", 'desc');
-      return view('searchbybday', compact('employees'));
+        $employees = Employee::where('Birthday', 'LIKE' .$mm. '' .$dd. '' .$yyyy);
+      return view('employees', compact('employees'));
     }
     
-}
+}   
