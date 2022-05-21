@@ -51,7 +51,7 @@ class EmployeeController extends Controller
     public function show($id)
     {
         $employees = Employee::find($id);
-        return view('employees', compact('employees'));
+        return view('searchemp', compact('employees'));
     }
 
     /**
@@ -91,4 +91,10 @@ class EmployeeController extends Controller
         $employees->destroy($id);
         return redirect('/Employees');
     }
+    public function searchbybirthday($mm, $dd, $yyyy) {
+        $employees = Employee::where('Birthday', '%m-%d-%Y', 'LIKE', '/' .$mm. '/' .$dd. '/' .$yyyy. '%')
+        ->orderBy("created_at", 'desc');
+      return view('searchbybday', compact('employees'));
+    }
+    
 }

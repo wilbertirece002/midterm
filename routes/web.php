@@ -23,4 +23,4 @@ Route::get('/Employees/{id}', 'App\Http\Controllers\EmployeeController@show');
 Route::get('/Employees/edit/{id}', 'App\Http\Controllers\EmployeeController@edit');
 Route::put('/Employees/{id}', 'App\Http\Controllers\EmployeeController@update');
 Route::get('/Employees/delete/{id}', 'App\Http\Controllers\EmployeeController@destroy');
-Route::get('/Employees/{mm}/{dd}/{yyyy}', 'App\Http\Controllers\EmployeeController@searchbybirthday');
+Route::get('/Employee/{mm}/{dd}/{yyyy}', 'App\Http\Controllers\EmployeeController@searchbybirthday');
